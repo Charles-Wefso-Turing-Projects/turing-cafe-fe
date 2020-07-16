@@ -1,0 +1,25 @@
+.allReservations {
+  display: grid;
+  flex-grow: 3;
+  font-size: 14px;
+  grid-gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 200px;
+  padding: 30px;
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .allReservations{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+  .allReservations{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+}

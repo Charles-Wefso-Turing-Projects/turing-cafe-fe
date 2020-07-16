@@ -8,11 +8,8 @@ const ReservationContainer = ({reservations}) => {
   const reservationCards = reservations.map((reservation) => (
 
         <Reservation
-          id={reservation.id}
+          reservation={reservation}
           key={reservation.id}
-          name={reservation.name}
-          number={reservation.number}
-          time={reservation.time}
           />
     ));
 

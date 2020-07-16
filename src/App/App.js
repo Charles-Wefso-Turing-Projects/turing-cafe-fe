@@ -30,12 +30,8 @@ class App extends Component {
 
   // Add idea
   createNewReservation = (reservation) => {
-    const newReservation = {
-      ...reservation, id : Date.now()
-    }
-
+    const newReservation = { ...reservation, id : Date.now()}
     const reservations = [...this.state.reservations, newReservation];
-
     this.setState({ reservations })
   }
 

@@ -27,17 +27,14 @@ describe('ReservationForm', () => {
     const { getByLabelText } = render(
       <ReservationForm />
     )
-    const testValueName = 'William Shatner';
     const inputName = getByLabelText('name-input');
-
-    const testValueDate = '07/17/2021';
     const inputDate = getByLabelText('date-input');
-
-    const testValueTime = '10:00';
     const inputTime = getByLabelText('time-input');
-
-    const testValueNumber = "10";
     const inputNumber = getByLabelText('number-input');
+    const testValueName = 'William Shatner';
+    const testValueDate = '07/17/2021';
+    const testValueTime = '12:00';
+    const testValueNumber = "10";
   
     fireEvent.change(inputName, { target: { value: testValueName } });
     fireEvent.change(inputDate, { target: { value: testValueDate } });
@@ -49,5 +46,7 @@ describe('ReservationForm', () => {
     expect(inputTime.value).toEqual(testValueTime);
     expect(inputNumber.value).toEqual(testValueNumber);
   });
+
+
 
 })

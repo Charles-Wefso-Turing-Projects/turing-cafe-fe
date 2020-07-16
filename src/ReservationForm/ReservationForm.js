@@ -40,6 +40,7 @@ class ReservationForm extends Component {
     return(
       <form onSubmit = {this.handleSubmit}>
         <input
+          aria-label="name-input"
           type="text"
           name="name"
           value={name}
@@ -47,6 +48,7 @@ class ReservationForm extends Component {
           onChange = {this.handleChange}
         />
         <input 
+          aria-label="date-input"
           type="text"
           name="date"
           value={date}
@@ -54,6 +56,7 @@ class ReservationForm extends Component {
           onChange= {this.handleChange}
         />
         <input 
+          aria-label="time-input"
           type="text"
           name="time"
           value={time}
@@ -61,6 +64,7 @@ class ReservationForm extends Component {
           onChange= {this.handleChange}
         />
         <input 
+          aria-label="number-input"
           type="number"
           name="number"
           value={number}

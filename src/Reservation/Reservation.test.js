@@ -1,7 +1,7 @@
 import React from "react";
 import Reservation from "./Reservation";
 import "@testing-library/jest-dom";
-import { render } from "@testing-library/react";
+import { render, getByLabelText } from "@testing-library/react";
 
 describe("Reservation", () => {
 

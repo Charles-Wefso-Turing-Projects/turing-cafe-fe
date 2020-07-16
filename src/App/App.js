@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import getAllReservations from "../apiCalls";
+import { getAllReservations, postReservation } from "../apiCalls";
 import ReservationContainer from "../ReservationContainer/ReservationContainer";
 import ReservationForm from "../ReservationForm/ReservationForm";
 
@@ -30,6 +30,7 @@ class App extends Component {
 
   // Add idea
   createNewReservation = (reservation) => {
+    postReservation(reservation)
     const newReservation = { ...reservation, id : Date.now()}
     const reservations = [...this.state.reservations, newReservation];
     this.setState({ reservations })

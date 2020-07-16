@@ -3,13 +3,14 @@ import Reservation from "../Reservation/Reservation";
 import "./ReservationContainer.css"
 
 
-const ReservationContainer = ({reservations}) => {
+const ReservationContainer = ({reservations, cancelReservation}) => {
 
   const reservationCards = reservations.map((reservation) => (
 
         <Reservation
           reservation={reservation}
           key={reservation.id}
+          cancelReservation={cancelReservation}
           />
     ));
 

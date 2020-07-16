@@ -22,3 +22,10 @@ export const postReservation = async (reservation) => {
     console.log(response.statusText)
       throw response.statusText;
 }
+
+export const deleteReservation = async (id) => {
+  const response = await fetch(`${url}/${id}`, {
+    method: "DELETE" })
+    const data = await response;
+    return data
+}

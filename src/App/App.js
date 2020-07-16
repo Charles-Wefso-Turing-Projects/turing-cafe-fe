@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getAllReservations, postReservation } from "../apiCalls";
+import { getAllReservations, postReservation, deleteReservation } from "../apiCalls";
 import ReservationContainer from "../ReservationContainer/ReservationContainer";
 import ReservationForm from "../ReservationForm/ReservationForm";
 
@@ -28,12 +28,25 @@ class App extends Component {
     );
   }
 
-  // Add idea
   createNewReservation = (reservation) => {
     postReservation(reservation)
     const newReservation = { ...reservation, id : Date.now()}
     const reservations = [...this.state.reservations, newReservation];
     this.setState({ reservations })
+  }
+
+  removeReservation = (id) => {
+    const reservations= this.state.reservations.filter(reservation => id !== reservation.id);
+    this.setState({ reservations });
+  }
+
+  cancelReservation = (id) => {
+    this.setState({
+      timeToUpdate : true
+    })
+    deleteReservation(id)
+    this.removeReservation(id)
+    console.log(`Reservation number ${id} has been cancelled.`)
   }
 
   render() {
@@ -44,7 +57,7 @@ class App extends Component {
         <ReservationForm createNewReservation={this.createNewReservation}/>
         </div>
         <div className='resy-container'>
-          <ReservationContainer reservations={this.state.reservations}/>
+          <ReservationContainer reservations={this.state.reservations} cancelReservation= {this.cancelReservation}/>
         </div>
       </div>
     )

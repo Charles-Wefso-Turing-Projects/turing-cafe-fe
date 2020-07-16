@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Reservation.css"
 
-const Reservation = ({reservation}) => {
+const Reservation = ({reservation, cancelReservation}) => {
 
 
   return (
@@ -10,6 +10,7 @@ const Reservation = ({reservation}) => {
       <p>Guests: {reservation.number}</p>
       <p>Time: {reservation.time}</p>
       <p>ID: {reservation.id}</p>
+      <button onClick= {() => cancelReservation(reservation.id)}>Cancel</button>
     </section> 
   )
 
